@@ -1,10 +1,14 @@
 import requests
 import random
+from dotenv import load_dotenv
+import os
 
-#To run these tests visit gorest.co.in and request a token then put this in as the token below
+#To run these tests visit gorest.co.in and request a token then put this in a .env file as API_KEY
+
+load_dotenv()
 
 site_url = "https://gorest.co.in/public/v2"
-token = "replace this text with your token"
+token = os.getenv("API_KEY")
 
 def test_get_all_users():
     #Getting data does not require a token
